@@ -5,7 +5,7 @@ from tensorflow.keras import layers
 
 class NeuralNet:
 
-    def __init__(self, inp_nodes: int, op_nodes=1):
+    def __init__(self, inp_nodes: int, op_nodes=1, hidden_layers=1):
         """
         initializes the model
         """
@@ -14,14 +14,11 @@ class NeuralNet:
         self.hidden_nodes = 2 * inp_nodes + 1
         self.out_nodes = op_nodes
 
-        self.model = keras.Sequential(
-            [
-                layers.Dense(self.inp_nodes, activation='sigmoid'),
-                layers.Dense(self.hidden_nodes, activation='sigmoid'),
-                layers.Dense(self.out_nodes, activation='sigmoid')
-            ]
-        )
-
+        self.model = keras.Sequential()
+        self.model.add(layers.Dense(self.inp_nodes, activation='sigmoid'))
+        for i in range(hidden_layers):
+            self.model.add(layers.Dense(self.hidden_nodes, activation='sigmoid'))
+        self.model.add(layers.Dense(self.out_nodes, activation='sigmoid'))
         self.model.build((None, self.inp_nodes))
 
     def forward(self, x):
