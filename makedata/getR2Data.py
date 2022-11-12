@@ -6,10 +6,10 @@ import os
 
 def load_data(train_and_test=True):
     """
-    loads the cryotherapy dataset
+    loads the r2 dataset
     """
 
-    path = os.path.join("datastore/Cryotherapy.csv")
+    path = os.path.join("datastore/r2.csv")
     df = pd.read_csv(path)
     cols = df.columns[:-1]
     target = df.columns[-1]
