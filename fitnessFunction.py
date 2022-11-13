@@ -5,7 +5,7 @@ from makemodel.MLModel import NeuralNet
 from sklearn.metrics import accuracy_score
 
 
-def fitness_function(params, name="divorce"):
+def fitness_function(params, name="auditRisk"):
     # Get processed data
     X_train, X_test, y_train, y_test = load_data(name)
     # print(X_train.shape, y_train.shape)

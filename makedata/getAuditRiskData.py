@@ -11,6 +11,7 @@ def load_data(train_and_test=True):
 
     path = os.path.join("datastore/auditRisk.csv")
     df = pd.read_csv(path)
+    df = df.dropna()
     cols = df.columns[:-1]
     target = df.columns[-1]
 
