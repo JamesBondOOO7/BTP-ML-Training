@@ -1,4 +1,4 @@
-import makedata.getAuditRiskData
+import makedata.getForestFireData
 
-XT, xt, yT, yt = makedata.getAuditRiskData.load_data()
+XT, xt, yT, yt = makedata.getForestFireData.load_data()
 print(XT.shape, xt.shape, yT.shape, yt.shape)

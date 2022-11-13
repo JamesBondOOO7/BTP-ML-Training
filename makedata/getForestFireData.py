@@ -20,6 +20,7 @@ def load_data(train_and_test=True):
     # Encoding the targets
     lb = LabelEncoder()
     y = lb.fit_transform(y)
+    print(y)
 
     if not train_and_test:
         return X, y
