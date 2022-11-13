@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import pandas as pd
+import numpy as np
 import os
 
 
@@ -11,6 +12,7 @@ def load_data(train_and_test=True):
 
     path = os.path.join("datastore/liverPatient.csv")
     df = pd.read_csv(path, names=['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'y'])
+    df = df.dropna()
 
     cols = df.columns[:-1]
     target = df.columns[-1]
@@ -24,6 +26,8 @@ def load_data(train_and_test=True):
     # Encoding the targets
     lb = LabelEncoder()
     y = lb.fit_transform(y)
+
+    X = np.asarray(X).astype('float32')
 
     if not train_and_test:
         return X, y

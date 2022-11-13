@@ -1,4 +1,4 @@
-import makedata.getForestFireData
+import makedata.getLiverPatientData
 
-XT, xt, yT, yt = makedata.getForestFireData.load_data()
+XT, xt, yT, yt = makedata.getLiverPatientData.load_data()
 print(XT.shape, xt.shape, yT.shape, yt.shape)
