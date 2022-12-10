@@ -5,7 +5,7 @@ from makemodel.MLModel import NeuralNet
 from sklearn.metrics import accuracy_score
 
 
-def fitness_function(params, name="liverPatient"):
+def fitness_function(params, name="hillValley"):
     # Get processed data
     X_train, X_test, y_train, y_test = load_data(name)
     # print(X_train.shape, y_train.shape)
